@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>普贤十大愿 · 十种广大行愿</title>
+<meta name="description" content="大方广佛华严经·入不思议解脱境界普贤行愿品。十愿：礼敬诸佛、称赞如来、广修供养、忏悔业障、随喜功德、请转法轮、请佛住世、常随佛学、恒顺众生、普皆回向。含经文原文、白话解释与可实践的修行要点。">
+<meta name="theme-color" content="#0a0d14">
+<meta property="og:title" content="普贤十大愿 · 十种广大行愿">
+<meta property="og:description" content="大方广佛华严经·入不思议解脱境界普贤行愿品。十种广大行愿，逐愿原文、白话与实践。">
+<link rel="stylesheet" href="./style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ============ 加载门 ============ -->
+<div class="gate" id="gate" role="dialog" aria-label="进入">
+  <div class="gate__inner">
+    <svg class="gate__mark" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="56" class="gate__ring"></circle>
+      <circle cx="60" cy="60" r="41" class="gate__ring gate__ring--2"></circle>
+      <path class="gate__petal" transform="rotate(0 60 60)" d="M60 58 C48.5 46.5 48.5 31.5 60 19.5 C71.5 31.5 71.5 46.5 60 58 Z"></path>
+      <path class="gate__petal" transform="rotate(45 60 60)" d="M60 58 C48.5 46.5 48.5 31.5 60 19.5 C71.5 31.5 71.5 46.5 60 58 Z"></path>
+      <path class="gate__petal" transform="rotate(90 60 60)" d="M60 58 C48.5 46.5 48.5 31.5 60 19.5 C71.5 31.5 71.5 46.5 60 58 Z"></path>
+      <path class="gate__petal" transform="rotate(135 60 60)" d="M60 58 C48.5 46.5 48.5 31.5 60 19.5 C71.5 31.5 71.5 46.5 60 58 Z"></path>
+      <path class="gate__petal" transform="rotate(180 60 60)" d="M60 58 C48.5 46.5 48.5 31.5 60 19.5 C71.5 31.5 71.5 46.5 60 58 Z"></path>
+      <path class="gate__petal" transform="rotate(225 60 60)" d="M60 58 C48.5 46.5 48.5 31.5 60 19.5 C71.5 31.5 71.5 46.5 60 58 Z"></path>
+      <path class="gate__petal" transform="rotate(270 60 60)" d="M60 58 C48.5 46.5 48.5 31.5 60 19.5 C71.5 31.5 71.5 46.5 60 58 Z"></path>
+      <path class="gate__petal" transform="rotate(315 60 60)" d="M60 58 C48.5 46.5 48.5 31.5 60 19.5 C71.5 31.5 71.5 46.5 60 58 Z"></path>
+      <circle cx="60" cy="60" r="4.6" class="gate__core"></circle>
+    </svg>
+    <h1 class="gate__title">普贤十大愿</h1>
+    <p class="gate__sub">十种广大行愿</p>
+    <p class="gate__src">大方广佛华严经·入不思议解脱境界普贤行愿品<br><span>唐罽宾国三藏般若 奉诏译</span></p>
+    <button class="gate__enter" id="gateEnter" type="button">
+      <span class="gate__enter-text">进入</span>
+      <span class="gate__enter-dots"><i></i><i></i><i></i></span>
+    </button>
+    <p class="gate__tip">建议开启声音以外的全部感官 · 向下滚动阅读</p>
+  </div>
+</div>
+
+<!-- ============ 3D 场景画布（固定，全站共用） ============ -->
+<canvas id="scene" class="scene" aria-hidden="true"></canvas>
+<div class="scene__scrim" aria-hidden="true"></div>
+
+<!-- ============ 顶栏 ============ -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__brand-cn">普贤十大愿</span>
+    <span class="nav__brand-en">SAMANTABHADRA</span>
+  </a>
+  <nav class="nav__links" aria-label="章节导航">
+    <a href="#note">写在前面</a>
+    <a href="#vow-1">十愿</a>
+    <a href="#coda">结归</a>
+  </nav>
+  <div class="nav__right">
+    <div class="nav__seeds" title="已拾取的偈句">
+      <svg viewBox="0 0 24 24" class="nav__seed-icon" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+      <span class="nav__seed-num" id="seedCount">0</span><span class="nav__seed-total">/10</span>
+    </div>
+    <div class="themes" role="group" aria-label="配色">
+      <button type="button" data-theme="ink" class="theme-btn is-on" title="玄青金"><i style="--sw:#c9a227"></i></button>
+      <button type="button" data-theme="paper" class="theme-btn" title="宣纸朱砂"><i style="--sw:#9e3b2e"></i></button>
+      <button type="button" data-theme="cream" class="theme-btn" title="奶油蓝"><i style="--sw:#0042af"></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="eyebrow">大方广佛华严经·入不思议解脱境界普贤行愿品</p>
+      <h2 class="hero__title"><span>普贤</span><span>十大愿</span></h2>
+      <p class="hero__lede">善男子，如来功德，假使十方一切诸佛，经不可说不可说佛刹极微尘数劫，相续演说，不可穷尽。若欲成就此功德门，应修十种广大行愿。</p>
+      <p class="hero__src">——《普贤行愿品》 · CBETA T0293</p>
+      <div class="hero__scroll"><span>向下滚动</span><i></i></div>
+    </div>
+  </section>
+
+  <!-- ============ 写在前面 ============ -->
+  <section class="note" id="note">
+    
+  <div class="note__grid">
+    <div class="note__left reveal" style="--d:0s">
+      <p class="eyebrow">写在前面</p>
+      <h2 class="note__title">这不是一个讲经的网站。</h2>
+      <p class="note__lead">它是一份阅读实验。</p>
+      <ul class="note__list">
+        <li>一者、礼敬诸佛</li>
+        <li>二者、称赞如来</li>
+        <li>三者、广修供养</li>
+        <li>四者、忏悔业障</li>
+        <li>五者、随喜功德</li>
+        <li>六者、请转法轮</li>
+        <li>七者、请佛住世</li>
+        <li>八者、常随佛学</li>
+        <li>九者、恒顺众生</li>
+        <li>十者、普皆回向</li>
+      </ul>
+      <p class="note__sign">—— 编者</p>
+    </div>
+    <div class="note__right reveal" style="--d:.14s">
+      <p class="note__parag">《大方广佛华严经·入不思议解脱境界普贤行愿品》，唐罽宾国三藏般若译。全经的最后一品，普贤菩萨说出十种广大行愿，后人称为「十大愿王」。</p>
+      <p class="note__parag">十愿不是十条戒律，是一份心的使用说明。它从头到尾只做一件事：把「我」的边界一点点拆掉——先拆到尽法界、虚空界，再拆到一切众生，最后拆到连功德也不留下。</p>
+      <p class="note__parag">我把它做成了十个章节。每一章有三层：经文原文、白话解释、以及一条可以今天就去试的事。原文一字未改，你随时可以拿它去对经本。</p>
+      <p class="note__parag">读下来你会发现，十愿的顺序不是随意的。从礼敬开始，到回向结束；中间是称赞、供养、忏悔、随喜、请法、请住世、随学、顺生。这是一条从「向外」到「向内」、最后再整个舍出去的路。</p>
+    </div>
+  </div>
+  </section>
+
+  <!-- ============ 十愿 ============ -->
+  <div class="vows" id="vows">
+
+  <article class="vow" id="vow-1" data-scene="avatars" data-n="1" data-side="right">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">01</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 一 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">礼敬诸佛</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">lǐ jìng zhū fó</p>
+        <p class="vow__gist reveal" style="--d:.24s">以清净的身、口、意，礼敬尽法界、虚空界一切诸佛。念念相续，无有间断，身语意业，无有疲厌。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>无量身</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">所有尽法界、虚空界、十方三世一切佛刹极微尘数诸佛世尊，我以普贤行愿力故，深心信解，如对目前。悉以清净身语意业，常修礼敬。一一佛所，皆现不可说不可说佛刹极微尘数身。一一身，遍礼不可说不可说佛刹极微尘数佛。虚空界尽，我礼乃尽；以虚空界不可尽故，我此礼敬，无有穷尽。如是乃至众生界尽、众生业尽、众生烦恼尽，我礼乃尽。而众生界乃至烦恼无有尽故，我此礼敬，无有穷尽。念念相续，无有间断。身语意业，无有疲厌。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">礼敬不是弯下腰这个动作。经文说，要「如对目前」——把尽法界、虚空界的一切觉悟者，观想成就在眼前，再以清净的身、口、意去礼敬。而且不是礼一尊，是「一一身，遍礼不可说不可说佛刹极微尘数佛」：每一尊前都现出无数个自己，每一个自己又礼敬无数尊。最后落到一句最要紧的话——虚空有尽，我的礼敬无尽。为什么无尽？因为虚空无尽，众生无尽，烦恼无尽。所以这份礼敬「念念相续，无有间断，身语意业，无有疲厌」。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>礼敬的对象先换成眼前的人。今天遇到第一个人时，心里先静一秒再开口——那一秒就是「如对目前」。</li>
+            <li>把「礼敬」拆成身、口、意三件事各做一次：身，让一次；口，说一句真的赞许；意，在心里替对方祝福一次。</li>
+            <li>「无有疲厌」的诀窍是不设终点。别想着礼完就好，把它当成一件没有结束时间的事。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="1" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">虚空界尽，我礼乃尽；以虚空界不可尽故，我此礼敬，无有穷尽。</span>
+          <span class="seed__mark">礼</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article class="vow" id="vow-2" data-scene="ocean" data-n="2" data-side="left">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">02</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 二 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">称赞如来</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">chēng tàn rú lái</p>
+        <p class="vow__gist reveal" style="--d:.24s">以出过辩才天女的微妙舌根，出无尽音声海，称扬赞叹一切如来诸功德海，穷未来际，相续不断。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>音声海</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">所有尽法界、虚空界十方三世一切刹土，所有极微一一尘中，皆有一切世间极微尘数佛。一一佛所，皆有菩萨海会围绕。我当悉以甚深胜解现前知见，各以出过辩才天女微妙舌根。一一舌根，出无尽音声海。一一音声，出一切言辞海。称扬赞叹一切如来诸功德海，穷未来际，相续不断，尽于法界，无不周遍。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">这一愿讲的是「说好话」的极致版本。经文的尺度很惊人：一粒微尘里就有极微尘数的佛，每一尊佛前都有菩萨海会围绕。而我要用「出过辩才天女」的舌根——比以辩才著称的天女还要殊胜——去赞叹。一条舌根出无尽音声海，一种音声出一切言辞海。注意最后四个字：「无不周遍」。赞叹不是挑一个人夸，是让赞叹这件事铺满整个法界，穷未来际，相续不断。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>今天找一个人，说一句「具体」的赞许——不是「你真好」，是「你刚才那句话，帮我把问题想清楚了」。具体的赞叹才有音声海的量。</li>
+            <li>试一次「背后赞叹」：在当事人不在场时说他一句好话。经文的「无不周遍」就是这样铺开的。</li>
+            <li>赞叹时不加「但是」。加一个「但是」，音声海就退回成一句话了。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="2" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">一一舌根，出无尽音声海。一一音声，出一切言辞海。</span>
+          <span class="seed__mark">赞</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article class="vow" id="vow-3" data-scene="clouds" data-n="3" data-side="right">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">03</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 三 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">广修供养</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">guǎng xiū gòng yǎng</p>
+        <p class="vow__gist reveal" style="--d:.24s">以上妙诸供养具供养诸佛，一一量如须弥山王。然诸供养中，法供养最。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>云供</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">所有尽法界、虚空界十方三世一切佛刹极微尘中，一一各有一切世界极微尘数佛。一一佛所，种种菩萨海会围绕。我以普贤行愿力故，起深信解现前知见。悉以上妙诸供养具而为供养。所谓华云、鬘云、天音乐云、天伞盖云、天衣服云、天种种香、涂香、烧香、末香，如是等云，一一量如须弥山王。然种种灯，酥灯、油灯，诸香油灯，一一灯炷如须弥山，一一灯油如大海水。以如是等诸供养具，常为供养。善男子，诸供养中，法供养最。所谓如说修行供养、利益众生供养、摄受众生供养、代众生苦供养、勤修善根供养、不舍菩萨业供养、不离菩提心供养。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">前半段是「物供养」的极致：华云、鬘云、天音乐云、天伞盖云、天衣服云、种种香云——每一种都大到「如须弥山王」；灯炷如须弥山，灯油如大海水。但经文紧接着自己把话头一转：「诸供养中，法供养最。」然后列出七种法供养：如说修行、利益众生、摄受众生、代众生苦、勤修善根、不舍菩萨业、不离菩提心。所以这一愿的重心其实不在供品，而在供养的动机是不是真的为众生。物供养是量的极致，法供养是质的转折。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>今天做一件「按经文说的去做」的事——挑你最近读到的一句，今天就照做一次。这是「如说修行供养」，七种法供养里的第一种。</li>
+            <li>供养不必是钱。把你最稀缺的东西分出一份给别人：时间、注意力、一次耐心的听完。</li>
+            <li>「代众生苦」可以小到：替人跑一趟、替人挨一句难听话。经文没规定尺度。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="3" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">诸供养中，法供养最。</span>
+          <span class="seed__mark">供</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article class="vow" id="vow-4" data-scene="wash" data-n="4" data-side="left">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">04</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 四 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">忏悔业障</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">chàn huǐ yè zhàng</p>
+        <p class="vow__gist reveal" style="--d:.24s">无始劫来由贪瞋痴所造恶业无量无边，今以清净三业诚心忏悔，后不复造，恒住净戒。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>洗濯</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">菩萨自念：我于过去无始劫中，由贪瞋痴，发身口意，作诸恶业，无量无边。若此恶业有体相者，尽虚空界不能容受。我今悉以清净三业，遍于法界极微尘刹，一切诸佛菩萨众前，诚心忏悔，后不复造，恒住净戒，一切功德。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">这一愿最锋利的一句是：「若此恶业有体相者，尽虚空界不能容受。」——如果这些业有形有体积，整个虚空都装不下。它先把人放到一个极小的位置，然后才给出路。出路只有三个动作：诚心忏悔、后不复造、恒住净戒。注意「后不复造」在中间——忏悔不是懊悔，懊悔只朝后看；后不复造是朝前立一条线。经文没说「把罪消掉」，它说的是不再造。忏悔完成在下一个选择上。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>挑一件你一直回避的具体事，把它写下来——写出来，它才有「体相」，才可能被放下。</li>
+            <li>「后不复造」要具体到一个可执行的边界：不是「我以后不发火」，是「下次我要发火时，先离开房间两分钟」。</li>
+            <li>忏悔完不要反复回味。经文给的顺序是「忏悔—后不复造—恒住净戒」，最后一步是往前住，不是往后看。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="4" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">若此恶业有体相者，尽虚空界不能容受。</span>
+          <span class="seed__mark">忏</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article class="vow" id="vow-5" data-scene="kindle" data-n="5" data-side="right">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">05</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 五 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">随喜功德</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">suí xǐ gōng dé</p>
+        <p class="vow__gist reveal" style="--d:.24s">诸佛从初发心，勤修福聚，不惜身命，乃至成就菩提、分布舍利。所有善根，我皆随喜。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>传灯</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">所有尽法界、虚空界十方三世一切佛刹极微尘数诸佛如来，从初发心，为一切智，勤修福聚，不惜身命。经不可说不可说佛刹极微尘数劫，一一劫中，舍不可说不可说佛刹极微尘数头目手足。如是一切难行苦行，圆满种种波罗蜜门，证入种种菩萨智地，成就诸佛无上菩提，及般涅槃，分布舍利。所有善根，我皆随喜。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">这一愿讲的是「不费力的修行」。经文把诸佛的历程铺得极长——从最初发心，到不惜身命，到无数劫中舍头目手足，到圆满六度、证入菩萨智地、成就菩提，直到最后般涅槃、分布舍利。这么长的一条路，我要做的只有一件事：「所有善根，我皆随喜。」随喜的意思是——别人做好事，我高兴，不为自己的处境设条件。它不花力气、不花时间，却直接对治嫉妒。十愿里，这是成本最低、最难做到的一愿：因为它要求你在别人得到好处时，真的不生一点酸。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>今天听到别人有好事时，停半秒，先在心里说「好」。那半秒就是随喜。</li>
+            <li>试着随喜一个你「本来会酸」的人——具体到某一个人，这件事才有效。</li>
+            <li>随喜之后不要加「不过我也不差」。经文里没有这个转折。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="5" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">所有善根，我皆随喜。</span>
+          <span class="seed__mark">喜</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article class="vow" id="vow-6" data-scene="wheel" data-n="6" data-side="left">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">06</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 六 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">请转法轮</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">qǐng zhuǎn fǎ lún</p>
+        <p class="vow__gist reveal" style="--d:.24s">以身口意业，种种方便，殷勤劝请一切诸佛转妙法轮，不使众生失于闻法之机。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>法轮</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">所有尽法界、虚空界十方三世一切佛刹极微尘中，一一各有不可说不可说佛刹极微尘数广大佛刹。一一刹中，念念有不可说不可说佛刹极微尘数一切诸佛成等正觉。一切菩萨海会围绕。而我悉以身口意业，种种方便，殷勤劝请，转妙法轮。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">「法轮」是比喻——佛法像轮子一样辗转传递、碾破烦恼，不停在一处。这一愿的动作是「请」：以身体、语言、心意，用种种方便，殷勤劝请诸佛说法。它的反面是沉默。经文里的尺度依然是极微尘数，但落到人身上只有一句：不要因为怕麻烦，就让该说的话没说。请转法轮，是主动去求「被指正」的机会。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>今天主动去问一个你其实想知道、但一直没开口问的问题。开口就是「请转法轮」。</li>
+            <li>见到有人愿意讲、愿意教时，做那个把场面撑起来的人：问第一个问题、点头、把话接下去。法轮要靠人推才转。</li>
+            <li>反过来做一次：今天当一次「愿意讲」的人，把你会的东西讲给一个人听。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="6" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">我悉以身口意业，种种方便，殷勤劝请，转妙法轮。</span>
+          <span class="seed__mark">请</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article class="vow" id="vow-7" data-scene="lamp" data-n="7" data-side="right">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">07</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 七 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">请佛住世</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">qǐng fó zhù shì</p>
+        <p class="vow__gist reveal" style="--d:.24s">劝请诸佛如来、诸菩萨、声闻缘觉，乃至一切善知识莫入涅槃，经一切劫利乐众生。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>长明</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">所有尽法界、虚空界十方三世一切佛刹极微尘数诸佛如来，将欲示现般涅槃者，及诸菩萨、声闻、缘觉、有学、无学，乃至一切诸善知识，我悉劝请，莫入涅槃。经于一切佛刹极微尘数劫，为欲利乐一切众生。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">这一愿和上一愿是一对：请转法轮是「请你讲」，请佛住世是「请你留下」。经文把劝请的对象从佛扩展到一切善知识——菩萨、声闻、缘觉，乃至任何一个教你东西的人。它承认一件让人难过的事：好东西会走。所以它给的动作是挽留，而且要挽留「经于一切佛刹极微尘数劫」。落到今天，它的意思很朴素：珍惜那个还在的人，别等他走了才想起来。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>今天联系一个「还在」但很久没联系的人——长辈、老师、老朋友。一条消息就够。这就是劝请莫入涅槃。</li>
+            <li>把你从某个人身上学到的东西，当面告诉他一次：「你当年说的那句，我到现在还在用。」</li>
+            <li>别只在告别时才挽留。这一愿的时态是现在进行时。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="7" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">我悉劝请，莫入涅槃。</span>
+          <span class="seed__mark">住</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article class="vow" id="vow-8" data-scene="steps" data-n="8" data-side="left">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">08</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 八 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">常随佛学</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">cháng suí fó xué</p>
+        <p class="vow__gist reveal" style="--d:.24s">如毗卢遮那如来，从初发心，精进不退。为重法故，不惜身命，何况王位、城邑聚落、宫殿园林。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>拾级</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">如此娑婆世界，毗卢遮那如来，从初发心，精进不退。以不可说不可说身命而为布施。剥皮为纸，析骨为笔，刺血为墨，书写经典，积如须弥。为重法故，不惜身命，何况王位、城邑聚落、宫殿园林、一切所有，及余种种难行苦行。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">这一愿给了一个具体的榜样：娑婆世界的毗卢遮那如来，从最初发心起，精进不退。经文用了一组极狠的比喻——剥皮为纸、析骨为笔、刺血为墨，写出来的经典堆得像须弥山。它的逻辑是递进的：连身命都不惜，何况王位、城邑、宫殿园林。所以「常随佛学」不是学一个道理，是学一种取舍的顺序——把法放在最前面，其他往后排。经文没说你要做到剥皮析骨，它说的是：先把你自己的取舍顺序摆正。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>今天做一件「把法放在前面」的小事：本该刷手机的十分钟，拿去读三页书。</li>
+            <li>「精进不退」的关键是不断。别定一个做三天就崩的计划，定一个今天一定能做完的。</li>
+            <li>找一个你愿意长期跟着学的对象——一个人、一部经、一门手艺——然后只做一件事：不换。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="8" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">剥皮为纸，析骨为笔，刺血为墨，书写经典，积如须弥。</span>
+          <span class="seed__mark">学</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article class="vow" id="vow-9" data-scene="tree" data-n="9" data-side="right">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">09</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 九 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">恒顺众生</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">héng shùn zhòng shēng</p>
+        <p class="vow__gist reveal" style="--d:.24s">于一切众生随顺而转，种种承事供养，如敬父母师长。以众生为树根，以大悲水饶益，方能成就菩提华果。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>树根</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">所有尽法界、虚空界十方刹海所有众生，种种差别，所谓卵生、胎生、湿生、化生，或有依于地、水、火、风而生住者，或有依空及诸卉木而生住者。种种生类、种种色身、种种形状、种种相貌、种种寿量、种种族类、种种名号、种种心性、种种知见、种种欲乐、种种意行、种种威仪、种种衣服、种种饮食。如是等类，我皆于彼随顺而转。种种承事、种种供养。如敬父母，如奉师长及阿罗汉，乃至如来，等无有异。于诸病苦，为作良医。于失道者，示其正路。于暗夜中，为作光明。于贫穷者，令得伏藏。菩萨如是平等饶益一切众生。何以故？菩萨若能随顺众生，则为随顺供养诸佛。若于众生尊重承事，则为尊重承事如来。若令众生生欢喜者，则令一切如来欢喜。何以故？诸佛如来，以大悲心而为体故。因于众生而起大悲，因于大悲生菩提心，因菩提心成等正觉。譬如旷野沙碛之中，有大树王，若根得水，枝叶华果悉皆繁茂。生死旷野菩提树王，亦复如是。一切众生而为树根，诸佛菩萨而为华果。以大悲水饶益众生，则能成就诸佛菩萨智慧华果。是故菩提，属于众生。若无众生，一切菩萨终不能成无上正觉。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">十愿里最长、也最翻转的一愿。前面九愿都在向上——礼敬佛、称赞佛、供养佛、随学佛。到第九愿，方向突然掉转：众生才是根。经文给了一个让人心里一震的比喻——旷野里有一棵大树王，根得水，枝叶花果才繁茂；生死旷野中的菩提树也一样，「一切众生而为树根，诸佛菩萨而为华果」。所以「以大悲水饶益众生，则能成就诸佛菩萨智慧华果」。结论只有八个字，是全品最锋利的一句：「是故菩提，属于众生。」——觉悟不属于高高在上的那一端，它属于你脚下的这一端。经文甚至把话说绝了：「若无众生，一切菩萨终不能成无上正觉。」没有众生，菩萨成不了佛。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>今天对一个人「随顺」一次：不纠正、不补充、不抢话，先顺着他的意思把话听完。</li>
+            <li>经文给了四个具体岗位：病苦者作良医、失道者示正路、暗夜中作光明、贫穷者令得伏藏。挑一个你今天真的能做的。</li>
+            <li>记住「菩提属于众生」——如果你做的事只有自己受益，那它在十愿里还没有落点。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="9" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">一切众生而为树根，诸佛菩萨而为华果。是故菩提，属于众生。</span>
+          <span class="seed__mark">顺</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article class="vow" id="vow-10" data-scene="dedication" data-n="10" data-side="left">
+    <div class="vow__grid">
+      <div class="vow__lead">
+        <div class="vow__index reveal" style="--d:0s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="vow__ring">
+            <circle cx="60" cy="60" r="57" class="vow__ring-out"></circle>
+            <circle cx="60" cy="60" r="57" class="vow__ring-arc" data-arc></circle>
+          </svg>
+          <span class="vow__num">10</span>
+        </div>
+        <p class="vow__ordinal reveal" style="--d:.06s">第 十 者</p>
+        <h2 class="vow__name reveal" style="--d:.12s">普皆回向</h2>
+        <p class="vow__pinyin reveal" style="--d:.18s">pǔ jiē huí xiàng</p>
+        <p class="vow__gist reveal" style="--d:.24s">从初礼拜乃至随顺，所有功德，皆悉回向尽法界、虚空界一切众生，令得安乐，代受苦果。</p>
+        <p class="vow__keyword reveal" style="--d:.3s"><span class="vow__keyword-dot"></span>回向</p>
+      </div>
+
+      <div class="vow__body reveal" style="--d:.1s">
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">经文原文</span></h3>
+          <p class="layer__sutra">从初礼拜，乃至随顺，所有功德，皆悉回向尽法界、虚空界一切众生。愿令众生常得安乐，无诸病苦。欲行恶法，皆悉不成。所修善业，皆速成就。关闭一切诸恶趣门，开示人天涅槃正路。若诸众生，因其积集诸恶业故，所感一切极重苦果，我皆代受。令彼众生，悉得解脱，究竟成就无上菩提。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">白话</span></h3>
+          <p class="layer__plain">十愿的收口。前面九愿积攒的所有功德——从最初的礼敬，到最后的随顺——一句话全部推出去：「皆悉回向尽法界、虚空界一切众生。」回向不是把功德送出去换东西，是把它从「我的」变成「不是我的」。经文里最重的一句在末尾：「若诸众生，因其积集诸恶业故，所感一切极重苦果，我皆代受。」——众生自己造的业所招来的苦果，我来受。这一愿把整个十愿的逻辑闭合了：开头是礼敬，中间是舍，结尾是连功德本身也舍掉。走完十愿，手上什么都不剩——这正是它要的结果。</p>
+        </section>
+
+        <section class="layer">
+          <h3 class="layer__title"><span class="layer__mark">今天可以做的</span></h3>
+          <ol class="layer__practice">
+            <li>今天做完一件好事后，在心里把它转给别人一次：「愿这件事的好处，归到某某身上。」</li>
+            <li>回向要具体到人。经文说的是「一切众生」，但落到今天就先从一个人开始。</li>
+            <li>试一次「不留名」：做一件好事，不让任何人知道，包括不告诉别人你做了。</li>
+          </ol>
+        </section>
+
+        <button class="seed" type="button" data-seed="10" aria-expanded="false">
+          <span class="seed__hint">拾取此愿偈句</span>
+          <span class="seed__text">若诸众生，因其积集诸恶业故，所感一切极重苦果，我皆代受。</span>
+          <span class="seed__mark">向</span>
+        </button>
+      </div>
+    </div>
+  </article>
+  </div>
+
+  <!-- ============ 结归 ============ -->
+  <section class="coda" id="coda">
+    
+  <div class="coda__inner">
+    <p class="eyebrow reveal" style="--d:0s">结归</p>
+    <h2 class="coda__title reveal" style="--d:.06s">唯此愿王，不相舍离。</h2>
+    <p class="coda__passage reveal" style="--d:.12s">是人临命终时，最后刹那，一切诸根悉皆散坏，一切亲属悉皆舍离，一切威势悉皆退失。辅相大臣、宫城内外、象马车乘、珍宝伏藏，如是一切，无复相随。唯此愿王，不相舍离。于一切时，引导其前。</p>
+    <div class="coda__verses reveal" style="--d:.18s">
+      
+      <figure class="verse">
+        <blockquote>所有十方世界中　三世一切人师子<br>我以清净身语意　一切遍礼尽无余</blockquote>
+        <figcaption>礼敬诸佛</figcaption>
+      </figure>
+      <figure class="verse">
+        <blockquote>乃至虚空世界尽　众生及业烦恼尽<br>如是一切无尽时　我愿究竟恒无尽</blockquote>
+        <figcaption>总颂 · 愿无尽</figcaption>
+      </figure>
+    </div>
+    <p class="coda__closing reveal" style="--d:.24s"><span>回向偈</span>愿以此功德，普及于一切。我等与众生，皆共成佛道。</p>
+  </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__src">经文来源：大方广佛华严经·入不思议解脱境界普贤行愿品 · 唐罽宾国三藏般若 奉诏译 · CBETA T0293</p>
+    <p class="foot__note">原文逐字忠实于经本；白话与「今天可以做的」为编者释义，供参考，不作定解。</p>
+    <p class="foot__built">本站为阅读实验，非商业用途。配色与字体均采用开源方案。</p>
+  </div>
+</footer>
+
+<!-- 偈句拾取提示 -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="importmap">
+{"imports":{"three":"./lib/three.module.min.js"}}
+</script>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
